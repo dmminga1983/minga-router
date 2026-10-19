@@ -4,6 +4,8 @@
 
 No API calls, no config file, no background process. It's a single `SKILL.md` — Claude reads it and applies the routing table itself, for free, before every `Task`/`Agent` delegation.
 
+[Русская версия →](README.ru.md)
+
 ## Why this saves you real money
 
 Most people delegate work to subagents one of two ways, and both waste money:
