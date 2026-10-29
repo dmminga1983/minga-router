@@ -40,7 +40,7 @@ curl -fsSL https://raw.githubusercontent.com/dmminga1983/minga-router/main/SKILL
 
 ## It gets smarter over time
 
-There's no real training here — no weights to update — but there's a practical stand-in: every verification (pass or escalation) gets logged to `.minga-router-log.md` in your project. Once a clear pattern shows up over ~15–20 logged outcomes — a task type that always needs escalation, or one where the expensive tier keeps passing with room to spare — the skill proposes an updated routing table with the pattern baked in, for you to review and approve. It never rewrites its own rules silently.
+There's no real training here — no weights to update — but there's a practical stand-in: with your permission (the skill asks once per project before writing anything), every verification (pass or escalation) gets logged to `.minga-router-log.md` in your project. The log holds only the task type, the model tried and whether the check passed. Say no and routing works the same, just without self-improvement. Once a clear pattern shows up over ~15–20 logged outcomes — a task type that always needs escalation, or one where the expensive tier keeps passing with room to spare — the skill proposes an updated routing table with the pattern baked in, for you to review and approve. It never rewrites its own rules silently.
 
 ## License
 

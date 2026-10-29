@@ -64,10 +64,25 @@ practical equivalent is: keep a log of actual outcomes and periodically
 refine the table's thresholds from it, proposing changes to the user for
 confirmation rather than silently rewriting the rules yourself.
 
-**After every verification** (whether it passed or needed escalation), add
-one line to `.minga-router-log.md` at the root of the current project (if
-there's no suitable project, just skip this step — don't create the file
-for its own sake):
+**Ask before keeping a log.** The log is written only with the user's
+consent. If `.minga-router-log.md` does not exist yet in the current project,
+then before the first entry ask the user once, in their language, in one
+short message, for example: "May I keep a short log of routing outcomes in
+`.minga-router-log.md` in this project, to tune my model choices over time?
+It records only the task type, which model was tried and whether the check
+passed, never file contents or your data. You can delete the file any time."
+- If they agree, create the file and start it with the line
+  `<!-- logging allowed by the user on YYYY-MM-DD -->`.
+- If they decline or don't answer, write nothing and don't ask again in this
+  conversation; routing still works as usual, just without self-improvement.
+- An existing `.minga-router-log.md` means consent was given earlier: keep
+  using it. If the user asks to stop, stop writing and tell them they can
+  delete the file.
+
+**After every verification** (whether it passed or needed escalation), and
+only if logging is allowed, add one line to `.minga-router-log.md` at the
+root of the current project (if there's no suitable project, just skip this
+step; don't create the file for its own sake):
 ```
 - 2026-10-09: [task type] haiku→failed→sonnet passed; reason: ...
 - 2026-10-09: [task type] sonnet passed on the first try
